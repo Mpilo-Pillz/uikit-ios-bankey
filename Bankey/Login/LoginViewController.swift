@@ -12,14 +12,23 @@ class LoginViewController: UIViewController {
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
-
+    
+    // computed properties
+    var username: String? {
+        return loginView.usernameTextField.text
+    }
+    
+    var password: String? {
+        return loginView.passwordTextField.text
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
         layout()
     }
-
-
+    
+    
 }
 
 extension LoginViewController {
@@ -45,7 +54,7 @@ extension LoginViewController {
         view.addSubview(signInButton)
         view.addSubview(errorMessageLabel)
         
-//        LoginView
+        //        LoginView
         // first centet it on screen
         // give right margin with trainiling ancor
         // give left margin with leading anchor
@@ -78,7 +87,35 @@ extension LoginViewController {
 // MARK: Actions
 extension LoginViewController {
     @objc func signInTapped(sender: UIButton) {
+        errorMessageLabel.isHidden = true
+        login()
+    }
+    
+    private func login() {
+        // unwrap optionsal this is a guard clause.
+        // basically its a note to developer that should the block execute it is a developer error
+        guard let username = username, let password = password else {
+            assertionFailure("Username / password should never be nil")
+            return
+        }
         
+        if username.isEmpty || password.isEmpty {
+            // show loading spinner
+            configureView(withMessage: "Username / password cannot be blank")
+            return
+        }
+        
+        if username == "Mpilo" && password == "Pillz" {
+            signInButton.configuration?.showsActivityIndicator = true
+        } else {
+            configureView(withMessage: "Incorrect username / password")
+        }
+                
+    }
+    
+    private func configureView(withMessage message: String) {
+        errorMessageLabel.isHidden = false
+        errorMessageLabel.text = message
     }
 }
 
