@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4323FAD28C381880039D8CE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4323FAC28C381880039D8CE /* OnboardingViewController.swift */; };
 		C467F1FB28BA98BB0009DF2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C467F1FA28BA98BB0009DF2D /* AppDelegate.swift */; };
 		C467F1FF28BA98BB0009DF2D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C467F1FE28BA98BB0009DF2D /* LoginViewController.swift */; };
 		C467F20528BA98BB0009DF2D /* Bankey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C467F20328BA98BB0009DF2D /* Bankey.xcdatamodeld */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C4323FAC28C381880039D8CE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C467F1F728BA98BB0009DF2D /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C467F1FA28BA98BB0009DF2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C467F1FE28BA98BB0009DF2D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				C4A3B30528BDB79100165179 /* OnboardingContainerViewController.swift */,
+				C4323FAC28C381880039D8CE /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C467F1FF28BA98BB0009DF2D /* LoginViewController.swift in Sources */,
+				C4323FAD28C381880039D8CE /* OnboardingViewController.swift in Sources */,
 				C467F20528BA98BB0009DF2D /* Bankey.xcdatamodeld in Sources */,
 				C467F21528BA9EB20009DF2D /* LoginView.swift in Sources */,
 				C4A3B30628BDB79100165179 /* OnboardingContainerViewController.swift in Sources */,
