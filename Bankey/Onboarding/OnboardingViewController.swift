@@ -30,12 +30,15 @@ class OnboardingViewController: UIViewController {
     }
     
     required init?(coder: NSCoder) {
+        // a constructor we get from UIViewController from storyboard
         fatalError("init(coder:) has not been implemented")
     }
 }
 
 extension OnboardingViewController {
     func style() {
+        view.backgroundColor = .systemBackground
+        
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 20
