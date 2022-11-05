@@ -8,6 +8,8 @@
 import UIKit
 import CoreData
 
+let appColor: UIColor = .systemTeal
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -17,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let loginViewController = LoginViewController()
     let onboardingContainerViewController = OnboardingContainerViewController()
     let homeViewController = HomeViewController()
+    let mainViewController = MainViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -25,7 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         loginViewController.delegate = self
         
-        window?.rootViewController = loginViewController
+//        window?.rootViewController = loginViewController
+        window?.rootViewController = mainViewController
         
         onboardingContainerViewController.delegate = self
         homeViewController.logoutDelegate = self
@@ -33,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //        window?.rootViewController = onboardingContainerViewController
         //        window?.rootViewController = OnboardingContainerViewController()
         
+//        mainViewController.selectedIndex = 2
         
         return true
     }
