@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     let loginViewController = LoginViewController()
+    let onboardingContainerViewController = OnboardingContainerViewController()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
@@ -21,7 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         loginViewController.delegate = self
         
-        window?.rootViewController = loginViewController
+//        window?.rootViewController = loginViewController
+        
+        onboardingContainerViewController.delegate = self
+        
+        window?.rootViewController = onboardingContainerViewController
 //        window?.rootViewController = OnboardingContainerViewController()
     
         
@@ -29,9 +34,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-extension AppDelegate: LoginViewControllerDelegate {
+extension AppDelegate: LoginViewControllerDelegate, OnboardingContainerViewControllerDelegate {
+    func didfinishOnboarding() {
+        print("Did finish onboadring")
+    }
+    
     func didLogin() {
         print("Did login")
     }
+    
 }
+
+
 
