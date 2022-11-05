@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let loginViewController = LoginViewController()
     let onboardingContainerViewController = OnboardingContainerViewController()
+    let homeViewController = HomeViewController()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
@@ -25,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = loginViewController
         
         onboardingContainerViewController.delegate = self
+        homeViewController.logoutDelegate = self
         
         //        window?.rootViewController = onboardingContainerViewController
         //        window?.rootViewController = OnboardingContainerViewController()
@@ -32,19 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-}
-
-extension AppDelegate: LoginViewControllerDelegate, OnboardingContainerViewControllerDelegate {
-    func didfinishOnboarding() {
-        print("Did finish onboadring")
-    }
-    
-    func didLogin() {
-        setRootViewController(onboardingContainerViewController)
-        //        window?.rootViewController = onboardingContainerViewController
-        
-    }
-    
 }
 
 extension AppDelegate {
@@ -60,6 +50,28 @@ extension AppDelegate {
         UIView.transition(with: window, duration: 0.7, options: .transitionCrossDissolve, animations: nil, completion: nil)
     }
 }
+
+extension AppDelegate: LoginViewControllerDelegate, OnboardingContainerViewControllerDelegate {
+    func didfinishOnboarding() {
+        print("Did finish onboadring")
+        setRootViewController(homeViewController)
+    }
+    
+    func didLogin() {
+        setRootViewController(onboardingContainerViewController)
+        //        window?.rootViewController = onboardingContainerViewController
+        
+    }
+    
+}
+
+extension AppDelegate: LogoutDelegate {
+    func didLogout() {
+        setRootViewController(loginViewController)
+    }
+}
+
+
 
 
 
