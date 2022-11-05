@@ -12,7 +12,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var hasOnboarded = false
+//    var hasOnboarded = false
     
     let loginViewController = LoginViewController()
     let onboardingContainerViewController = OnboardingContainerViewController()
@@ -54,12 +54,12 @@ extension AppDelegate {
 
 extension AppDelegate: LoginViewControllerDelegate, OnboardingContainerViewControllerDelegate {
     func didfinishOnboarding() {
-        hasOnboarded = true
+        LocalState.hasOnboarded = true
         setRootViewController(homeViewController)
     }
     
     func didLogin() {
-        if hasOnboarded {
+        if LocalState.hasOnboarded {
             setRootViewController(homeViewController)
         } else {
             setRootViewController(onboardingContainerViewController)
