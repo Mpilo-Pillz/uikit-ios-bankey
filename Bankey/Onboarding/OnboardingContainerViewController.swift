@@ -90,10 +90,12 @@ class OnboardingContainerViewController: UIViewController {
     private func style() {
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         nextButton.setTitle("Next", for: [])
+        nextButton.setTitleColor(.white, for: [])
         nextButton.addTarget(self, action: #selector(nextTapped), for: .primaryActionTriggered)
         
         backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.setTitle("Back", for: [])
+        backButton.setTitleColor(.white, for: [])
         backButton.addTarget(self, action: #selector(backTapped), for: .primaryActionTriggered)
             
         closeButton.translatesAutoresizingMaskIntoConstraints = false
@@ -102,6 +104,7 @@ class OnboardingContainerViewController: UIViewController {
         
         doneButton.translatesAutoresizingMaskIntoConstraints = false
         doneButton.setTitle("Done", for: [])
+        doneButton.setTitleColor(.white, for: [])
         doneButton.addTarget(self, action: #selector(doneTapped), for: .primaryActionTriggered)
 //        view.addSubview(closeButton)
     }

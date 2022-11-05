@@ -10,7 +10,7 @@ import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     
     let loginViewController = LoginViewController()
@@ -22,13 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         loginViewController.delegate = self
         
-//        window?.rootViewController = loginViewController
+        window?.rootViewController = loginViewController
         
         onboardingContainerViewController.delegate = self
         
-        window?.rootViewController = onboardingContainerViewController
-//        window?.rootViewController = OnboardingContainerViewController()
-    
+        //        window?.rootViewController = onboardingContainerViewController
+        //        window?.rootViewController = OnboardingContainerViewController()
+        
         
         return true
     }
@@ -40,9 +40,25 @@ extension AppDelegate: LoginViewControllerDelegate, OnboardingContainerViewContr
     }
     
     func didLogin() {
-        print("Did login")
+        setRootViewController(onboardingContainerViewController)
+        //        window?.rootViewController = onboardingContainerViewController
+        
     }
     
+}
+
+extension AppDelegate {
+    func setRootViewController(_ vc: UIViewController, animated: Bool = true) {
+        guard animated, let  window = self.window else {
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
+            return
+        }
+        
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+        UIView.transition(with: window, duration: 0.7, options: .transitionCrossDissolve, animations: nil, completion: nil)
+    }
 }
 
 
