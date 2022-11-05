@@ -55,6 +55,8 @@ extension OnboardingViewController {
         label.numberOfLines = 0
         label.text = titleText
         
+        
+        
     }
     
     func layout() {
