@@ -14,6 +14,10 @@ class AccountSummaryCell: UITableViewCell {
     let underlineView = UIView()
     let nameLabel = UILabel()
     
+    let balanceStackView = UIStackView()
+    let balanceLabel = UILabel()
+    let balanceAmountLabel = UILabel()
+    
     static let reuseID = "AccountSummaryCell"
     static let rowHeight: CGFloat = 100
     
@@ -40,14 +44,32 @@ extension AccountSummaryCell {
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
-        nameLabel.adjustsFontForContentSizeCategory = true
-        nameLabel.text = "No-Fee All-In Chequing"
-  
+        nameLabel.text = "Account name"
+        //        nameLabel.adjustsFontForContentSizeCategory = true
+        //        nameLabel.text = "No-Fee All-In Chequing"
         //        view.addSubview(typeLabel) // dont do this even though it works
+        
+        balanceStackView.translatesAutoresizingMaskIntoConstraints = false
+        balanceStackView.axis = .vertical
+        balanceStackView.spacing = 0
+        
+        balanceLabel.translatesAutoresizingMaskIntoConstraints = false
+        balanceLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        balanceLabel.textAlignment = .right
+        balanceLabel.text = "Some balance"
+        
+        balanceAmountLabel.translatesAutoresizingMaskIntoConstraints = false
+        balanceAmountLabel.textAlignment = .right
+        balanceAmountLabel.text = "$929,466.63"
 
         contentView.addSubview(typeLabel) // add to contentView
         contentView.addSubview(underlineView)
         contentView.addSubview(nameLabel)
+        
+        balanceStackView.addArrangedSubview(balanceLabel)
+        balanceStackView.addArrangedSubview(balanceAmountLabel)
+        
+        contentView.addSubview(balanceStackView)
     }
     
     private func layout() {
@@ -59,7 +81,10 @@ extension AccountSummaryCell {
             underlineView.widthAnchor.constraint(equalToConstant: 60),
             underlineView.heightAnchor.constraint(equalToConstant: 4),
             nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: underlineView.bottomAnchor, multiplier: 2),
-            nameLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2)
+            nameLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
+            balanceStackView.topAnchor.constraint(equalToSystemSpacingBelow: underlineView.bottomAnchor, multiplier: 0),
+            balanceStackView.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 4),
+            trailingAnchor.constraint(equalToSystemSpacingAfter: balanceStackView.trailingAnchor, multiplier: 4)
         ])
         
         
