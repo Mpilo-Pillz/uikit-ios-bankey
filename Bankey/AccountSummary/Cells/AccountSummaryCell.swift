@@ -9,6 +9,12 @@ import Foundation
 import UIKit
 
 class AccountSummaryCell: UITableViewCell {
+    
+    let typeLabel = UILabel()
+    
+    static let reuseID = "AccountSummaryCell"
+    static let rowHeight: CGFloat = 100
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
@@ -22,10 +28,20 @@ class AccountSummaryCell: UITableViewCell {
 
 extension AccountSummaryCell {
     private func setup() {
+        typeLabel.translatesAutoresizingMaskIntoConstraints = false
+        typeLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
+        typeLabel.adjustsFontForContentSizeCategory = true
+        typeLabel.text = "Account type"
+
         
+        contentView.addSubview(typeLabel) // add to contentView
+//        view.addSubview(typeLabel) // dont do this even though it works
     }
     
     private func layout() {
-        
+        NSLayoutConstraint.activate([
+            typeLabel.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 2),
+            typeLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2)
+        ])
     }
 }
