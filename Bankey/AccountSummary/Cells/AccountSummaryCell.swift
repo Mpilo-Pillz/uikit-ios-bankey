@@ -18,6 +18,8 @@ class AccountSummaryCell: UITableViewCell {
     let balanceLabel = UILabel()
     let balanceAmountLabel = UILabel()
     
+    let chevronImageView = UIImageView()
+    
     static let reuseID = "AccountSummaryCell"
     static let rowHeight: CGFloat = 100
     
@@ -61,6 +63,10 @@ extension AccountSummaryCell {
         balanceAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceAmountLabel.textAlignment = .right
         balanceAmountLabel.text = "$929,466.63"
+        
+        chevronImageView.translatesAutoresizingMaskIntoConstraints = false
+        let chevronImage = UIImage(systemName: "chevron.right")!.withTintColor(appColor, renderingMode: .alwaysOriginal)
+        chevronImageView.image = chevronImage
 
         contentView.addSubview(typeLabel) // add to contentView
         contentView.addSubview(underlineView)
@@ -68,8 +74,10 @@ extension AccountSummaryCell {
         
         balanceStackView.addArrangedSubview(balanceLabel)
         balanceStackView.addArrangedSubview(balanceAmountLabel)
+       
         
         contentView.addSubview(balanceStackView)
+        contentView.addSubview(chevronImageView)
     }
     
     private func layout() {
@@ -84,7 +92,9 @@ extension AccountSummaryCell {
             nameLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             balanceStackView.topAnchor.constraint(equalToSystemSpacingBelow: underlineView.bottomAnchor, multiplier: 0),
             balanceStackView.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 4),
-            trailingAnchor.constraint(equalToSystemSpacingAfter: balanceStackView.trailingAnchor, multiplier: 4)
+            trailingAnchor.constraint(equalToSystemSpacingAfter: balanceStackView.trailingAnchor, multiplier: 4),
+            chevronImageView.topAnchor.constraint(equalToSystemSpacingBelow: underlineView.bottomAnchor, multiplier: 1),
+            trailingAnchor.constraint(equalToSystemSpacingAfter: chevronImageView.trailingAnchor, multiplier: 1)
         ])
         
         
