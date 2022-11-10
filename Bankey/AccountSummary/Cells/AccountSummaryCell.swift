@@ -12,6 +12,7 @@ class AccountSummaryCell: UITableViewCell {
     
     let typeLabel = UILabel()
     let underlineView = UIView()
+    let nameLabel = UILabel()
     
     static let reuseID = "AccountSummaryCell"
     static let rowHeight: CGFloat = 100
@@ -36,11 +37,17 @@ extension AccountSummaryCell {
 
         underlineView.translatesAutoresizingMaskIntoConstraints = false
         underlineView.backgroundColor = appColor
+        
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        nameLabel.adjustsFontForContentSizeCategory = true
+        nameLabel.text = "No-Fee All-In Chequing"
   
         //        view.addSubview(typeLabel) // dont do this even though it works
 
         contentView.addSubview(typeLabel) // add to contentView
         contentView.addSubview(underlineView)
+        contentView.addSubview(nameLabel)
     }
     
     private func layout() {
@@ -50,7 +57,9 @@ extension AccountSummaryCell {
             underlineView.topAnchor.constraint(equalToSystemSpacingBelow: typeLabel.bottomAnchor, multiplier: 1),
             underlineView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             underlineView.widthAnchor.constraint(equalToConstant: 60),
-            underlineView.heightAnchor.constraint(equalToConstant: 4)
+            underlineView.heightAnchor.constraint(equalToConstant: 4),
+            nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: underlineView.bottomAnchor, multiplier: 2),
+            nameLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2)
         ])
         
         
