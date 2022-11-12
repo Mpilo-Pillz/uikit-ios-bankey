@@ -73,6 +73,5 @@ struct CurrencyFormatter {
         rootString.append(centString)
         
         return rootString
-        
     }
 }
