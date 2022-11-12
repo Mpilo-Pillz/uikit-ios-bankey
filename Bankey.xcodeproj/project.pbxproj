@@ -23,6 +23,8 @@
 		C46E27DD291974A2009BB7E0 /* AccountSummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46E27DC291974A2009BB7E0 /* AccountSummaryHeaderView.xib */; };
 		C4A3B30628BDB79100165179 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3B30528BDB79100165179 /* OnboardingContainerViewController.swift */; };
 		C4AC325E291CD7A800FA5600 /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC325D291CD7A800FA5600 /* AccountSummaryCell.swift */; };
+		C4AC3260291FD8A100FA5600 /* DecimalUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC325F291FD8A100FA5600 /* DecimalUtil.swift */; };
+		C4AC3262291FD91000FA5600 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC3261291FD91000FA5600 /* CurrencyFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		C46E27DC291974A2009BB7E0 /* AccountSummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSummaryHeaderView.xib; sourceTree = "<group>"; };
 		C4A3B30528BDB79100165179 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		C4AC325D291CD7A800FA5600 /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
+		C4AC325F291FD8A100FA5600 /* DecimalUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalUtil.swift; sourceTree = "<group>"; };
+		C4AC3261291FD91000FA5600 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 			children = (
 				C4218E082916EC190068BCCA /* LocalState.swift */,
 				C4218E0A2916FE0B0068BCCA /* UIViewControllerUtils.swift */,
+				C4AC325F291FD8A100FA5600 /* DecimalUtil.swift */,
+				C4AC3261291FD91000FA5600 /* CurrencyFormatter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -228,6 +234,7 @@
 				C4AC325E291CD7A800FA5600 /* AccountSummaryCell.swift in Sources */,
 				C4218E0B2916FE0B0068BCCA /* UIViewControllerUtils.swift in Sources */,
 				C467F1FF28BA98BB0009DF2D /* LoginViewController.swift in Sources */,
+				C4AC3262291FD91000FA5600 /* CurrencyFormatter.swift in Sources */,
 				C4323FAD28C381880039D8CE /* OnboardingViewController.swift in Sources */,
 				C467F20528BA98BB0009DF2D /* Bankey.xcdatamodeld in Sources */,
 				C467F21528BA9EB20009DF2D /* LoginView.swift in Sources */,
@@ -235,6 +242,7 @@
 				C4218E062916E2220068BCCA /* HomeViewController.swift in Sources */,
 				C467F1FB28BA98BB0009DF2D /* AppDelegate.swift in Sources */,
 				C4218E102917E2FB0068BCCA /* AccountSummaryViewController.swift in Sources */,
+				C4AC3260291FD8A100FA5600 /* DecimalUtil.swift in Sources */,
 				C4218E092916EC190068BCCA /* LocalState.swift in Sources */,
 				C4218E0D2916FF770068BCCA /* MainViewController.swift in Sources */,
 			);
