@@ -28,4 +28,9 @@ class Test: XCTestCase {
         let result = formatter.dollarsFormatted(30571264.89)
         XCTAssertEqual(result, "$30,571,264.89")
     }
+    
+    func testZeroDollarsFormatted() throws {
+        let result = formatter.dollarsFormatted(0)
+        XCTAssertEqual(result, "$0.00")
+    }
 }
