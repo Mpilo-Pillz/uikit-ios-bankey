@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+// No showing this on the app
 class HomeViewController: UIViewController {
     
     let stackView = UIStackView()

@@ -26,6 +26,7 @@
 		C4AC3260291FD8A100FA5600 /* DecimalUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC325F291FD8A100FA5600 /* DecimalUtil.swift */; };
 		C4AC3262291FD91000FA5600 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC3261291FD91000FA5600 /* CurrencyFormatter.swift */; };
 		C4AC3271292111D200FA5600 /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC3270292111D200FA5600 /* CurrencyFormatterTests.swift */; };
+		C4AC3273292140BC00FA5600 /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC3272292140BC00FA5600 /* NSNotificationName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		C4AC3261291FD91000FA5600 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		C4AC326729210BE500FA5600 /* BankeyUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4AC3270292111D200FA5600 /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
+		C4AC3272292140BC00FA5600 /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				C4218E0A2916FE0B0068BCCA /* UIViewControllerUtils.swift */,
 				C4AC325F291FD8A100FA5600 /* DecimalUtil.swift */,
 				C4AC3261291FD91000FA5600 /* CurrencyFormatter.swift */,
+				C4AC3272292140BC00FA5600 /* NSNotificationName.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				C4218E062916E2220068BCCA /* HomeViewController.swift in Sources */,
 				C467F1FB28BA98BB0009DF2D /* AppDelegate.swift in Sources */,
 				C4218E102917E2FB0068BCCA /* AccountSummaryViewController.swift in Sources */,
+				C4AC3273292140BC00FA5600 /* NSNotificationName.swift in Sources */,
 				C4AC3260291FD8A100FA5600 /* DecimalUtil.swift in Sources */,
 				C4218E092916EC190068BCCA /* LocalState.swift in Sources */,
 				C4218E0D2916FF770068BCCA /* MainViewController.swift in Sources */,
