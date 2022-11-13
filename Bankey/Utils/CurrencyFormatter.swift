@@ -33,6 +33,9 @@ struct CurrencyFormatter {
         var dollars = dollarComponents.first! // $813,570
         dollars.removeFirst() // $813,570
         
+//        let formatter = NumberFormatter()
+//        formatter.locale = Locale(identifier: "en_US")
+        
         return dollars
     }
     
@@ -52,6 +55,10 @@ struct CurrencyFormatter {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.usesGroupingSeparator = true
+        
+        // for locale currency en_US
+//        let formatter = NumberFormatter()
+//        formatter.locale = Locale(identifier: "en_US")
         
         if let result = formatter.string(from: dollars as NSNumber) {
             return result
