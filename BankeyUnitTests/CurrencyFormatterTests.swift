@@ -33,4 +33,12 @@ class Test: XCTestCase {
         let result = formatter.dollarsFormatted(0)
         XCTAssertEqual(result, "$0.00")
     }
+    
+    func testDollarsFormattedWithCurrencySymbol() throws {
+        let locale = Locale.current
+        let currencySymbol = locale.currencySymbol!
+        
+        let result = formatter.dollarsFormatted(30571264.89)
+        XCTAssertEqual(result, "\(currencySymbol)30,571,264.89")
+    }
 }
