@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func registerForNotifications() {
+        // linking the property logout to the function didLogout
         NotificationCenter.default.addObserver(self, selector: #selector(didLogout), name: .logout, object: nil)
     }
     

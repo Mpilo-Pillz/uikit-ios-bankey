@@ -27,6 +27,7 @@
 		C4AC3262291FD91000FA5600 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC3261291FD91000FA5600 /* CurrencyFormatter.swift */; };
 		C4AC3271292111D200FA5600 /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC3270292111D200FA5600 /* CurrencyFormatterTests.swift */; };
 		C4AC3273292140BC00FA5600 /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC3272292140BC00FA5600 /* NSNotificationName.swift */; };
+		C4AC3275292145BF00FA5600 /* UITextFieldSecureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC3274292145BF00FA5600 /* UITextFieldSecureToggle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		C4AC326729210BE500FA5600 /* BankeyUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4AC3270292111D200FA5600 /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
 		C4AC3272292140BC00FA5600 /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
+		C4AC3274292145BF00FA5600 /* UITextFieldSecureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldSecureToggle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		C4218E072916EBE20068BCCA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C4AC3274292145BF00FA5600 /* UITextFieldSecureToggle.swift */,
 				C4218E082916EC190068BCCA /* LocalState.swift */,
 				C4218E0A2916FE0B0068BCCA /* UIViewControllerUtils.swift */,
 				C4AC325F291FD8A100FA5600 /* DecimalUtil.swift */,
@@ -307,6 +310,7 @@
 				C467F1FB28BA98BB0009DF2D /* AppDelegate.swift in Sources */,
 				C4218E102917E2FB0068BCCA /* AccountSummaryViewController.swift in Sources */,
 				C4AC3273292140BC00FA5600 /* NSNotificationName.swift in Sources */,
+				C4AC3275292145BF00FA5600 /* UITextFieldSecureToggle.swift in Sources */,
 				C4AC3260291FD8A100FA5600 /* DecimalUtil.swift in Sources */,
 				C4218E092916EC190068BCCA /* LocalState.swift in Sources */,
 				C4218E0D2916FF770068BCCA /* MainViewController.swift in Sources */,
