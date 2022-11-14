@@ -13,6 +13,7 @@ class ShakeyBellView: UIView {
     
     override init(frame:CGRect) {
         super.init(frame: frame)
+        setup()
         style()
         layout()
     }
@@ -26,6 +27,13 @@ class ShakeyBellView: UIView {
 }
 
 extension ShakeyBellView {
+    
+    func setup() {
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(_:)))
+        imageView.addGestureRecognizer(singleTap)
+        imageView.isUserInteractionEnabled = true
+    }
+    
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -42,5 +50,12 @@ extension ShakeyBellView {
             imageView.heightAnchor.constraint(equalToConstant: 24),
             imageView.widthAnchor.constraint(equalToConstant: 24)
         ])
+    }
+}
+
+// MARK: - Actions
+extension ShakeyBellView {
+    @objc func imageViewTapped(_ recognizer: UITapGestureRecognizer) {
+        print("Shaking!!!")
     }
 }
