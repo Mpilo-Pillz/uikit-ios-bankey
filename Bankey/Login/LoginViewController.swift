@@ -36,6 +36,13 @@ class LoginViewController: UIViewController {
         return loginView.passwordTextField.text
     }
     
+    // animation
+    var leadingEdgeOnScreen: CGFloat = 16
+    var leadingEdgeOffScreen: CGFloat = -1000
+    
+    var titleLeadingAnchor: NSLayoutConstraint?
+    var subtitleLeadingAnchor: NSLayoutConstraint?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
@@ -45,6 +52,11 @@ class LoginViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         signInButton.configuration?.showsActivityIndicator = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animate()
     }
     
     
@@ -95,12 +107,23 @@ extension LoginViewController {
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
+        // animating the title lable putting it off screen
+        titleLeadingAnchor = titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leadingEdgeOffScreen)
+        titleLeadingAnchor?.isActive = true
+        
         // Subtitle
+//        LEading anchor might be redudnt due to animation. need to revisit
         NSLayoutConstraint.activate([
             loginView.topAnchor.constraint(equalToSystemSpacingBelow: subTitleLabel.bottomAnchor, multiplier: 3),
             subTitleLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
             subTitleLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor)
         ])
+        
+        subtitleLeadingAnchor = subTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leadingEdgeOffScreen)
+        subtitleLeadingAnchor?.isActive = true
+//        wrong but created a cool animation
+//        subtitleLeadingAnchor = subTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: leadingEdgeOffScreen)
+//        subtitleLeadingAnchor?.isActive = true
         
         //        LoginView
         // first centet it on screen
@@ -165,6 +188,23 @@ extension LoginViewController {
     private func configureView(withMessage message: String) {
         errorMessageLabel.isHidden = false
         errorMessageLabel.text = message
+    }
+}
+
+// MARK: - Animations
+extension LoginViewController {
+    private func animate() {
+        let animator1 = UIViewPropertyAnimator(duration: 1.25, curve: .easeInOut) {
+            self.titleLeadingAnchor?.constant = self.leadingEdgeOnScreen
+            self.subtitleLeadingAnchor?.constant = self.leadingEdgeOnScreen
+            self.view.layoutIfNeeded()
+        }
+//        let animator2 = UIViewPropertyAnimator(duration: 1.25, curve: .easeInOut) {
+//            self.subtitleLeadingAnchor?.constant = self.leadingEdgeOnScreen
+//            self.view.layoutIfNeeded()
+//        }
+        animator1.startAnimation()
+//        animator2.startAnimation()
     }
 }
 
