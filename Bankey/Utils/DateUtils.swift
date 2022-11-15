@@ -8,7 +8,7 @@
 import Foundation
 
 extension Date {
-    static var bankeyDateFormatter {
+    static var bankeyDateFormatter:  DateFormatter  {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone(abbreviation: "MDT")
         return formatter
