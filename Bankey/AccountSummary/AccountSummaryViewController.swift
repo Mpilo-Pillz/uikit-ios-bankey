@@ -101,7 +101,7 @@ extension AccountSummaryViewController: UITableViewDelegate {
 }
 
 extension AccountSummaryViewController {
-    private func fetchAccounts() {
+    private func fetchAccountsHArdCode() {
         let savings = AccountSummaryCell.ViewModel(accountType: .Banking, accountName: "Basic Savings", balance: 929466.23)
         let chequing = AccountSummaryCell.ViewModel(accountType: .Banking, accountName: "No-fee All-In Chequing", balance: 17562.44)
         let visa = AccountSummaryCell.ViewModel(accountType: .CreditCard, accountName: "Master Credit Card", balance: 412.83)
