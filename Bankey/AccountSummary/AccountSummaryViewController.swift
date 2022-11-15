@@ -9,6 +9,10 @@ import UIKit
 
 class AccountSummaryViewController: UIViewController {
     
+    // Request Models
+    var profile: Profile?
+    
+    // View Models
     var accounts: [AccountSummaryCell.ViewModel] = []
     var tableView = UITableView()
     
