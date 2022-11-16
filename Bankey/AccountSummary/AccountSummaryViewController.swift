@@ -18,8 +18,10 @@ class AccountSummaryViewController: UIViewController {
     
     var accountCellViewModels: [AccountSummaryCell.ViewModel] = []
     
+    // Compoents
     var tableView = UITableView()
     var headerView = AccountSummaryHeaderView(frame: .zero)
+    let refreshControl = UIRefreshControl()
     
     
     // Instantiated only when needed
@@ -43,6 +45,7 @@ extension AccountSummaryViewController {
         setupNavigationBar()
         setupTableView()
         setupTableHeaderView()
+        setupRefreshControl()
         fetchData()
     }
     
@@ -77,6 +80,12 @@ extension AccountSummaryViewController {
     
     func setupNavigationBar() {
         navigationItem.rightBarButtonItem = logoutBarButtonItem
+    }
+    
+    private func setupRefreshControl() {
+        refreshControl.tintColor = appColor
+        refreshControl.addTarget(self, action: #selector(refreshContent), for: .valueChanged)
+        tableView.refreshControl = refreshControl
     }
 }
 
@@ -115,14 +124,6 @@ extension AccountSummaryViewController {
         accountCellViewModels.append(visa)
         accountCellViewModels.append(investment1)
         accountCellViewModels.append(investment2)
-    }
-}
-
-// MARK: Actions
-extension AccountSummaryViewController {
-    @objc func logoutTapped(sender: UIButton) {
-        // this is like a dispatch
-        NotificationCenter.default.post(name: .logout, object: nil)
     }
 }
 
@@ -175,5 +176,17 @@ extension AccountSummaryViewController {
                                                     name: profile.firstName,
                                                     date: Date())
         headerView.configure(viewModel: vm)
+    }
+}
+
+// MARK: Actions
+extension AccountSummaryViewController {
+    @objc func logoutTapped(sender: UIButton) {
+        // this is like a dispatch
+        NotificationCenter.default.post(name: .logout, object: nil)
+    }
+    
+    @objc func refreshContent() {
+        fetchData()
     }
 }
