@@ -160,6 +160,7 @@ extension AccountSummaryViewController {
         group.notify(queue: .main) {
             // reloading the data on the table view only after both complete
             self.tableView.reloadData()
+            self.tableView.refreshControl?.endRefreshing()
         }
     }
     
