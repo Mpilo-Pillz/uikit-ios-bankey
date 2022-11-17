@@ -164,6 +164,7 @@ extension AccountSummaryViewController {
 //                self.tableView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
+                self.showErrorAlert()
             }
             group.leave()
         }
@@ -199,6 +200,18 @@ extension AccountSummaryViewController {
                                          accountName: $0.name,
                                          balance: $0.amount)
         }
+    }
+    
+   
+
+    private func showErrorAlert() {
+        let alert = UIAlertController(title: "Network Error",
+                                      message: "Please check your network connectivity and try again.",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
     }
     
     private func configureTableHeaderView(with profile: Profile) {
