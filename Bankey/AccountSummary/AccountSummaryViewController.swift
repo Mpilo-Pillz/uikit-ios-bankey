@@ -177,6 +177,7 @@ extension AccountSummaryViewController {
 //                self.tableView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
+                self.displayError(error)
             }
             group.leave()
         }
