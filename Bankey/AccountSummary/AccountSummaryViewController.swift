@@ -163,19 +163,7 @@ extension AccountSummaryViewController {
 //                self.configureTableHeaderView(with: profile)
 //                self.tableView.reloadData()
             case .failure(let error):
-                print(error.localizedDescription)
-                let title: String
-                let message: String
-                switch error {
-                    
-                case .serverError:
-                    title = "Server Error"
-                    message = "Ensure you are connected to the internet. Please try again"
-                case .decodingError:
-                    title = "Decoding Error"
-                    message = "We could not process your request. Please try again."
-                }
-                self.showErrorAlert(title: title, message: message)
+                self.displayError(error)
             }
             group.leave()
         }
@@ -214,7 +202,21 @@ extension AccountSummaryViewController {
     }
     
    
-
+    private func displayError(_ error: NetworkError) {
+        print(error.localizedDescription)
+        let title: String
+        let message: String
+        switch error {
+            
+        case .serverError:
+            title = "Server Error"
+            message = "Ensure you are connected to the internet. Please try again"
+        case .decodingError:
+            title = "Decoding Error"
+            message = "We could not process your request. Please try again."
+        }
+        self.showErrorAlert(title: title, message: message)
+    }
     private func showErrorAlert(title: String, message: String) {
         let alert = UIAlertController(title: title,
                                       message: message,
