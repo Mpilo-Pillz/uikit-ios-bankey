@@ -212,6 +212,14 @@ extension AccountSummaryViewController {
     }
     
     @objc func refreshContent() {
-        fetchData()
-    }
-}
+            reset()
+            setupSkeletons()
+            tableView.reloadData()
+            fetchData()
+        }
+        
+        private func reset() {
+            profile = nil
+            accounts = []
+            isLoaded = false
+        }}
