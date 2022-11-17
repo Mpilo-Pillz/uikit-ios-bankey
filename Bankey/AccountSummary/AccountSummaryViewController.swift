@@ -160,7 +160,7 @@ extension AccountSummaryViewController {
             switch result {
             case .success(let profile):
                 self.profile = profile
-                self.configureTableHeaderView(with: profile)
+//                self.configureTableHeaderView(with: profile)
 //                self.tableView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
@@ -173,7 +173,7 @@ extension AccountSummaryViewController {
             switch result {
             case .success(let accounts):
                 self.accounts = accounts
-                self.configureTableCells(with: accounts)
+//                self.configureTableCells(with: accounts)
 //                self.tableView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
@@ -182,9 +182,14 @@ extension AccountSummaryViewController {
         }
         group.notify(queue: .main) {
             // reloading the data on the table view only after both complete
-            self.isLoaded = true
-            self.tableView.reloadData()
             self.tableView.refreshControl?.endRefreshing()
+            guard let profile = self.profile else { return }
+            
+            self.isLoaded = true
+            self.configureTableHeaderView(with: profile)
+            self.configureTableCells(with: self.accounts)
+            self.tableView.reloadData()
+            
         }
     }
     
