@@ -27,6 +27,13 @@ class AccountSummaryViewController: UIViewController {
     var profileManager: ProfileManageble = ProfileManager()
     var isLoaded = false
     
+    // Error alert
+    lazy var errorAlert: UIAlertController = {
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        return alert
+    }()
+    
     
     // Instantiated only when needed
     lazy var logoutBarButtonItem: UIBarButtonItem = {
@@ -248,13 +255,17 @@ private func reloadView() {
             return (title, message)
     }
     private func showErrorAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title,
-                                      message: message,
-                                      preferredStyle: .alert)
+//        let alert = UIAlertController(title: title,
+//                                      message: message,
+//                                      preferredStyle: .alert)
+//
+//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//        present(alert, animated: true, completion: nil)
         
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        errorAlert.title = title
+        errorAlert.message = message
         
-        present(alert, animated: true, completion: nil)
+        present(errorAlert, animated: true, completion: nil)
     }
     
     private func configureTableHeaderView(with profile: Profile) {
@@ -299,10 +310,10 @@ extension AccountSummaryViewController {
 //extension AccountSummaryViewController {
 //    private func fetchData() {
 //        let group = DispatchGroup()
-//        
+//
 ////        Testing - random number selection
 //        let userId = String(Int.random(in: 1..<4))
-//        
+//
 //        group.enter()
 //        profileManager.fetchProfile(forUserId: userId) { result in
 //            switch result {
@@ -315,7 +326,7 @@ extension AccountSummaryViewController {
 //            }
 //            group.leave()
 //        }
-//        
+//
 //        group.enter()
 //        fetchAccounts(forUserId: userId) { result in
 //            switch result {
@@ -333,11 +344,11 @@ extension AccountSummaryViewController {
 //            // reloading the data on the table view only after both complete
 //            self.tableView.refreshControl?.endRefreshing()
 //            guard let profile = self.profile else { return }
-//            
+//
 //            self.isLoaded = true
 //            self.configureTableHeaderView(with: profile)
 //            self.configureTableCells(with: self.accounts)
 //            self.tableView.reloadData()
-//            
+//
 //        }
 //    }
