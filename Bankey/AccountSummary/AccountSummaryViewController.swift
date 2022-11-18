@@ -154,47 +154,55 @@ extension AccountSummaryViewController {
     private func fetchData() {
         let group = DispatchGroup()
         
-//        Testing - random number selection
+        // Testing - random number selection
         let userId = String(Int.random(in: 1..<4))
         
-        group.enter()
-        profileManager.fetchProfile(forUserId: userId) { result in
-            switch result {
-            case .success(let profile):
-                self.profile = profile
-//                self.configureTableHeaderView(with: profile)
-//                self.tableView.reloadData()
-            case .failure(let error):
-                self.displayError(error)
-            }
-            group.leave()
-        }
+        fetchProfile(group: group, userId: userId)
+        fetchAccounts(group: group, userId: userId)
         
-        group.enter()
-        fetchAccounts(forUserId: userId) { result in
-            switch result {
-            case .success(let accounts):
-                self.accounts = accounts
-//                self.configureTableCells(with: accounts)
-//                self.tableView.reloadData()
-            case .failure(let error):
-                print(error.localizedDescription)
-                self.displayError(error)
-            }
-            group.leave()
-        }
         group.notify(queue: .main) {
-            // reloading the data on the table view only after both complete
-            self.tableView.refreshControl?.endRefreshing()
-            guard let profile = self.profile else { return }
-            
-            self.isLoaded = true
-            self.configureTableHeaderView(with: profile)
-            self.configureTableCells(with: self.accounts)
-            self.tableView.reloadData()
-            
+            self.reloadView()
         }
     }
+    
+    private func fetchProfile(group: DispatchGroup, userId: String) {
+    group.enter()
+    profileManager.fetchProfile(forUserId: userId) { result in
+        switch result {
+        case .success(let profile):
+            self.profile = profile
+        case .failure(let error):
+            self.displayError(error)
+        }
+        group.leave()
+    }
+}
+    
+private func fetchAccounts(group: DispatchGroup, userId: String) {
+    group.enter()
+    fetchAccounts(forUserId: userId) { result in
+        switch result {
+        case .success(let accounts):
+            self.accounts = accounts
+        case .failure(let error):
+            self.displayError(error)
+        }
+        group.leave()
+    }
+}
+    
+private func reloadView() {
+    self.tableView.refreshControl?.endRefreshing()
+    
+    guard let profile = self.profile else { return }
+    
+    self.isLoaded = true
+    self.configureTableHeaderView(with: profile)
+    self.configureTableCells(with: self.accounts)
+    self.tableView.reloadData()
+}
+
+
     
     private func configureTableCells(with accounts: [Account]) {
         accountCellViewModels = accounts.map {
@@ -284,3 +292,52 @@ extension AccountSummaryViewController {
             return titleAndMessage(for: error)
     }
 }
+
+// MARK: REFERENCE
+
+// MARK: - Networking
+//extension AccountSummaryViewController {
+//    private func fetchData() {
+//        let group = DispatchGroup()
+//        
+////        Testing - random number selection
+//        let userId = String(Int.random(in: 1..<4))
+//        
+//        group.enter()
+//        profileManager.fetchProfile(forUserId: userId) { result in
+//            switch result {
+//            case .success(let profile):
+//                self.profile = profile
+////                self.configureTableHeaderView(with: profile)
+////                self.tableView.reloadData()
+//            case .failure(let error):
+//                self.displayError(error)
+//            }
+//            group.leave()
+//        }
+//        
+//        group.enter()
+//        fetchAccounts(forUserId: userId) { result in
+//            switch result {
+//            case .success(let accounts):
+//                self.accounts = accounts
+////                self.configureTableCells(with: accounts)
+////                self.tableView.reloadData()
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//                self.displayError(error)
+//            }
+//            group.leave()
+//        }
+//        group.notify(queue: .main) {
+//            // reloading the data on the table view only after both complete
+//            self.tableView.refreshControl?.endRefreshing()
+//            guard let profile = self.profile else { return }
+//            
+//            self.isLoaded = true
+//            self.configureTableHeaderView(with: profile)
+//            self.configureTableCells(with: self.accounts)
+//            self.tableView.reloadData()
+//            
+//        }
+//    }
