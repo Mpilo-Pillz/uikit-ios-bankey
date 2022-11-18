@@ -302,7 +302,11 @@ extension AccountSummaryViewController {
     func titleAndMessageForTesting(for error: NetworkError) -> (String, String) {
             return titleAndMessage(for: error)
     }
-}
+    
+    func forceFetchPRofile() {
+        fetchProfile(group: DispatchGroup(), userId: "1")
+    }
+} 
 
 // MARK: REFERENCE
 
