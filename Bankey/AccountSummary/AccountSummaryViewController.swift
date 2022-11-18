@@ -23,6 +23,8 @@ class AccountSummaryViewController: UIViewController {
     var headerView = AccountSummaryHeaderView(frame: .zero)
     let refreshControl = UIRefreshControl()
     
+    // Networking
+    var profileManager: ProfileManageble = ProfileManager()
     var isLoaded = false
     
     
@@ -156,7 +158,7 @@ extension AccountSummaryViewController {
         let userId = String(Int.random(in: 1..<4))
         
         group.enter()
-        fetchProfile(forUserId: userId) { result in
+        profileManager.fetchProfile(forUserId: userId) { result in
             switch result {
             case .success(let profile):
                 self.profile = profile

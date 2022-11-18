@@ -28,6 +28,7 @@
 		C47FA44A292422E100D54478 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47FA449292422E100D54478 /* AccountTests.swift */; };
 		C47FA44C29277FF700D54478 /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47FA44B29277FF700D54478 /* SkeletonLoadable.swift */; };
 		C47FA44E2927BDA200D54478 /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47FA44D2927BDA200D54478 /* SkeletonCell.swift */; };
+		C47FA4512928C05A00D54478 /* profileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47FA4502928C05A00D54478 /* profileManager.swift */; };
 		C4A3B30628BDB79100165179 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3B30528BDB79100165179 /* OnboardingContainerViewController.swift */; };
 		C4AC325E291CD7A800FA5600 /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC325D291CD7A800FA5600 /* AccountSummaryCell.swift */; };
 		C4AC3260291FD8A100FA5600 /* DecimalUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC325F291FD8A100FA5600 /* DecimalUtil.swift */; };
@@ -71,6 +72,7 @@
 		C47FA449292422E100D54478 /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 		C47FA44B29277FF700D54478 /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
 		C47FA44D2927BDA200D54478 /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
+		C47FA4502928C05A00D54478 /* profileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileManager.swift; sourceTree = "<group>"; };
 		C4A3B30528BDB79100165179 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		C4AC325D291CD7A800FA5600 /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
 		C4AC325F291FD8A100FA5600 /* DecimalUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalUtil.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				C47FA4412923DFB700D54478 /* AccountSummaryViewControllerNetworking.swift */,
 				C4AC325B291CD70C00FA5600 /* Header */,
 				C4AC325C291CD75900FA5600 /* Cells */,
+				C47FA44F2928C02A00D54478 /* Networking */,
 			);
 			path = AccountSummary;
 			sourceTree = "<group>";
@@ -201,6 +204,14 @@
 				C47FA449292422E100D54478 /* AccountTests.swift */,
 			);
 			path = AccountSummary;
+			sourceTree = "<group>";
+		};
+		C47FA44F2928C02A00D54478 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C47FA4502928C05A00D54478 /* profileManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		C4A3B30428BDB72200165179 /* Onboarding */ = {
@@ -354,6 +365,7 @@
 				C467F20528BA98BB0009DF2D /* Bankey.xcdatamodeld in Sources */,
 				C467F21528BA9EB20009DF2D /* LoginView.swift in Sources */,
 				C4A3B30628BDB79100165179 /* OnboardingContainerViewController.swift in Sources */,
+				C47FA4512928C05A00D54478 /* profileManager.swift in Sources */,
 				C4218E062916E2220068BCCA /* HomeViewController.swift in Sources */,
 				C467F1FB28BA98BB0009DF2D /* AppDelegate.swift in Sources */,
 				C47FA44C29277FF700D54478 /* SkeletonLoadable.swift in Sources */,
