@@ -205,20 +205,39 @@ extension AccountSummaryViewController {
     }
     
    
+//    private func displayError(_ error: NetworkError) {
+//        print(error.localizedDescription)
+//        let title: String
+//        let message: String
+//        switch error {
+//
+//        case .serverError:
+//            title = "Server Error"
+//            message = "Ensure you are connected to the internet. Please try again"
+//        case .decodingError:
+//            title = "Decoding Error"
+//            message = "We could not process your request. Please try again."
+//        }
+//        self.showErrorAlert(title: title, message: message)
+//    }
+    
     private func displayError(_ error: NetworkError) {
-        print(error.localizedDescription)
+        let titleAndMessage = titleAndMessage(for: error)
+        self.showErrorAlert(title: titleAndMessage.0, message: titleAndMessage.1)
+    }
+    
+    private func titleAndMessage(for error: NetworkError) -> (String, String) {
         let title: String
-        let message: String
-        switch error {
-            
-        case .serverError:
-            title = "Server Error"
-            message = "Ensure you are connected to the internet. Please try again"
-        case .decodingError:
-            title = "Decoding Error"
-            message = "We could not process your request. Please try again."
-        }
-        self.showErrorAlert(title: title, message: message)
+            let message: String
+            switch error {
+            case .serverError:
+                title = "Server Error"
+                message = "We could not process your request. Please try again."
+            case .decodingError:
+                title = "Network Error"
+                message = "Ensure you are connected to the internet. Please try again."
+            }
+            return (title, message)
     }
     private func showErrorAlert(title: String, message: String) {
         let alert = UIAlertController(title: title,
@@ -257,3 +276,11 @@ extension AccountSummaryViewController {
             accounts = []
             isLoaded = false
         }}
+
+// MARK: Unit testing
+// MARK: Unit testing
+extension AccountSummaryViewController {
+    func titleAndMessageForTesting(for error: NetworkError) -> (String, String) {
+            return titleAndMessage(for: error)
+    }
+}

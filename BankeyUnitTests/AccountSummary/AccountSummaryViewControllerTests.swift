@@ -19,7 +19,9 @@ class AccountSummaryViewControllerTests: XCTestCase {
 //        vc.loadViewIfNeeded()
     }
     
-    func testSomething() throws {
-        
+    func testTitleAndMessageForServerError() throws {
+        let titleAndMessage = vc.titleAndMessageForTesting(for: .serverError)
+        XCTAssertEqual("Server Error", titleAndMessage.0)
+        XCTAssertEqual("We could not process your request. Please try again.", titleAndMessage.1)
     }
 }
