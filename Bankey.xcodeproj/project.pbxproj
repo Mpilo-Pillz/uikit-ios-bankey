@@ -29,6 +29,7 @@
 		C47FA44C29277FF700D54478 /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47FA44B29277FF700D54478 /* SkeletonLoadable.swift */; };
 		C47FA44E2927BDA200D54478 /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47FA44D2927BDA200D54478 /* SkeletonCell.swift */; };
 		C47FA4512928C05A00D54478 /* profileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47FA4502928C05A00D54478 /* profileManager.swift */; };
+		C47FA4532928C3F700D54478 /* AccountSummaryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47FA4522928C3F700D54478 /* AccountSummaryViewControllerTests.swift */; };
 		C4A3B30628BDB79100165179 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3B30528BDB79100165179 /* OnboardingContainerViewController.swift */; };
 		C4AC325E291CD7A800FA5600 /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC325D291CD7A800FA5600 /* AccountSummaryCell.swift */; };
 		C4AC3260291FD8A100FA5600 /* DecimalUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC325F291FD8A100FA5600 /* DecimalUtil.swift */; };
@@ -73,6 +74,7 @@
 		C47FA44B29277FF700D54478 /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
 		C47FA44D2927BDA200D54478 /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
 		C47FA4502928C05A00D54478 /* profileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileManager.swift; sourceTree = "<group>"; };
+		C47FA4522928C3F700D54478 /* AccountSummaryViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewControllerTests.swift; sourceTree = "<group>"; };
 		C4A3B30528BDB79100165179 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		C4AC325D291CD7A800FA5600 /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
 		C4AC325F291FD8A100FA5600 /* DecimalUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalUtil.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			children = (
 				C47FA4472924210100D54478 /* ProfileTests.swift */,
 				C47FA449292422E100D54478 /* AccountTests.swift */,
+				C47FA4522928C3F700D54478 /* AccountSummaryViewControllerTests.swift */,
 			);
 			path = AccountSummary;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				C4AC3271292111D200FA5600 /* CurrencyFormatterTests.swift in Sources */,
 				C47FA44A292422E100D54478 /* AccountTests.swift in Sources */,
 				C47FA4482924210100D54478 /* ProfileTests.swift in Sources */,
+				C47FA4532928C3F700D54478 /* AccountSummaryViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
